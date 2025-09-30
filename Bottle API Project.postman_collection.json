@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "f443c734-a5ea-49e4-90e3-eeda239a5e27",
+		"name": "Bottle API Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48565142",
+		"_collection_link": "https://belahidoost-3536583.postman.co/workspace/Bardia-Elahidoost's-Workspace~9d2ae9d8-7f1c-47f8-8230-e439a764079f/collection/48565142-f443c734-a5ea-49e4-90e3-eeda239a5e27?action=share&source=collection_link&creator=48565142"
+	},
+	"item": [
+		{
+			"name": "1. Login and Get Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "bardia",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "2363",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "Atra",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "PPV@caXGC8e2atT",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "username",
+							"value": "Amirreza",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "Zw@spiz6qfyutZs",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseURL}}/token/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Send Anonymous Message",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MjM1MzM3LCJpYXQiOjE3NTkyMzUwMzcsImp0aSI6ImNmYTA2ZDUyZjFlYTQ3MjhiYzgyZjJjNTVkMGI1ZGQ1IiwidXNlcl9pZCI6IjEifQ.FPY7quIkG-SfU-sl-Ww0A65shplqH3PwzcE6eQUmbXY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"This is a test message!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/messages/send/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"messages",
+						"send",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Receive Message",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MjM1NTU4LCJpYXQiOjE3NTkyMzUyNTgsImp0aSI6ImU5OTczZmRlZmE3OTQ1YmNiMTZhZmM2ODg2MTA4OTVkIiwidXNlcl9pZCI6IjIifQ.8F9sUJ6PakK5EOc-9LgvRLK63NDt47Dcoq3ZaaFfLSE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/messages/receive/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"messages",
+						"receive",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. List My Messages",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MjM1NzUwLCJpYXQiOjE3NTkyMzU0NTAsImp0aSI6Ijc0MTljMTQ4ZDVjNDQyNWQ5ZThhNzU2MGI0NTA1Y2Y0IiwidXNlcl9pZCI6IjIifQ.w5NIKrM6pCLvYyqXrX3jXpwCXABhjm6aF-EcPMMsZgo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/messages/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"messages",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Reveal Sender",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MjM1NzUwLCJpYXQiOjE3NTkyMzU0NTAsImp0aSI6Ijc0MTljMTQ4ZDVjNDQyNWQ5ZThhNzU2MGI0NTA1Y2Y0IiwidXNlcl9pZCI6IjIifQ.w5NIKrM6pCLvYyqXrX3jXpwCXABhjm6aF-EcPMMsZgo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/messages/1/reveal/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"messages",
+						"1",
+						"reveal",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Add Friend",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MjM1NzUwLCJpYXQiOjE3NTkyMzU0NTAsImp0aSI6Ijc0MTljMTQ4ZDVjNDQyNWQ5ZThhNzU2MGI0NTA1Y2Y0IiwidXNlcl9pZCI6IjIifQ.w5NIKrM6pCLvYyqXrX3jXpwCXABhjm6aF-EcPMMsZgo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Amirreza",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseURL}}/friends/add/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"friends",
+						"add",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. Admin: Ban User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MjM2MDU3LCJpYXQiOjE3NTkyMzU3NTcsImp0aSI6IjIyZWM5MDg0NDQ1ZDRlZjNhOTJkNmI3YzVmNmY5YmY0IiwidXNlcl9pZCI6IjEifQ.zOBvkONsmv0h3mBFfzcTP8eGDaJBEOkxAtbnULrDlo0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/admin/ban-user/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"admin",
+						"ban-user",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": ""
+		}
+	]
+}
