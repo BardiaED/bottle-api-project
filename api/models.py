@@ -17,6 +17,7 @@ class Message(models.Model):
     is_sender_revealed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     reply_text = models.TextField(null=True, blank=True)
+    is_notification = models.BooleanField(default=False)
 
     def __str__(self):
         return f'Message from {self.sender.username}'

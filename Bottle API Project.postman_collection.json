@@ -72,7 +72,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MjM1MzM3LCJpYXQiOjE3NTkyMzUwMzcsImp0aSI6ImNmYTA2ZDUyZjFlYTQ3MjhiYzgyZjJjNTVkMGI1ZGQ1IiwidXNlcl9pZCI6IjEifQ.FPY7quIkG-SfU-sl-Ww0A65shplqH3PwzcE6eQUmbXY",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MzI5OTg3LCJpYXQiOjE3NTkzMjk2ODcsImp0aSI6ImJjM2UxNTAzZTNhZTRhYzViOGUwNTM4OWVhODNlYjViIiwidXNlcl9pZCI6IjEifQ.qUQozA-izRnTLgDoMywDqCcUh9JxNF8HytlYwCnlx68",
 							"type": "string"
 						}
 					]
@@ -81,7 +81,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"text\": \"This is a test message!\"\r\n}",
+					"raw": "{\r\n    \"text\": \"ay adame zerang!\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -110,7 +110,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MjM1NTU4LCJpYXQiOjE3NTkyMzUyNTgsImp0aSI6ImU5OTczZmRlZmE3OTQ1YmNiMTZhZmM2ODg2MTA4OTVkIiwidXNlcl9pZCI6IjIifQ.8F9sUJ6PakK5EOc-9LgvRLK63NDt47Dcoq3ZaaFfLSE",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MzMwMDQ1LCJpYXQiOjE3NTkzMjk3NDUsImp0aSI6IjJhMzBhZWUxYzc2MzRkMTQ4OTJiYmYxNmYyZTcxMTIzIiwidXNlcl9pZCI6IjMifQ.NMRkaIUDQm6nVqTP5D_mSvHyNbyw0PWzRzceVJDpJS8",
 							"type": "string"
 						}
 					]
@@ -132,27 +132,39 @@
 			"response": []
 		},
 		{
-			"name": "4. List My Messages",
+			"name": "4. Reply To Message",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MjM1NzUwLCJpYXQiOjE3NTkyMzU0NTAsImp0aSI6Ijc0MTljMTQ4ZDVjNDQyNWQ5ZThhNzU2MGI0NTA1Y2Y0IiwidXNlcl9pZCI6IjIifQ.w5NIKrM6pCLvYyqXrX3jXpwCXABhjm6aF-EcPMMsZgo",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MzMwMDQ1LCJpYXQiOjE3NTkzMjk3NDUsImp0aSI6IjJhMzBhZWUxYzc2MzRkMTQ4OTJiYmYxNmYyZTcxMTIzIiwidXNlcl9pZCI6IjMifQ.NMRkaIUDQm6nVqTP5D_mSvHyNbyw0PWzRzceVJDpJS8",
 							"type": "string"
 						}
 					]
 				},
-				"method": "GET",
+				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "reply_text",
+							"value": "kheyli mokhlesam",
+							"type": "text"
+						}
+					]
+				},
 				"url": {
-					"raw": "{{baseURL}}/messages/",
+					"raw": "{{baseURL}}/messages/2/reply/",
 					"host": [
 						"{{baseURL}}"
 					],
 					"path": [
 						"messages",
+						"2",
+						"reply",
 						""
 					]
 				}
@@ -167,7 +179,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MjM1NzUwLCJpYXQiOjE3NTkyMzU0NTAsImp0aSI6Ijc0MTljMTQ4ZDVjNDQyNWQ5ZThhNzU2MGI0NTA1Y2Y0IiwidXNlcl9pZCI6IjIifQ.w5NIKrM6pCLvYyqXrX3jXpwCXABhjm6aF-EcPMMsZgo",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MzMwMDQ1LCJpYXQiOjE3NTkzMjk3NDUsImp0aSI6IjJhMzBhZWUxYzc2MzRkMTQ4OTJiYmYxNmYyZTcxMTIzIiwidXNlcl9pZCI6IjMifQ.NMRkaIUDQm6nVqTP5D_mSvHyNbyw0PWzRzceVJDpJS8",
 							"type": "string"
 						}
 					]
@@ -175,13 +187,13 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{baseURL}}/messages/1/reveal/",
+					"raw": "{{baseURL}}/messages/2/reveal/",
 					"host": [
 						"{{baseURL}}"
 					],
 					"path": [
 						"messages",
-						"1",
+						"2",
 						"reveal",
 						""
 					]
@@ -197,7 +209,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MjM1NzUwLCJpYXQiOjE3NTkyMzU0NTAsImp0aSI6Ijc0MTljMTQ4ZDVjNDQyNWQ5ZThhNzU2MGI0NTA1Y2Y0IiwidXNlcl9pZCI6IjIifQ.w5NIKrM6pCLvYyqXrX3jXpwCXABhjm6aF-EcPMMsZgo",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MzMwMDQ1LCJpYXQiOjE3NTkzMjk3NDUsImp0aSI6IjJhMzBhZWUxYzc2MzRkMTQ4OTJiYmYxNmYyZTcxMTIzIiwidXNlcl9pZCI6IjMifQ.NMRkaIUDQm6nVqTP5D_mSvHyNbyw0PWzRzceVJDpJS8",
 							"type": "string"
 						}
 					]
@@ -209,7 +221,7 @@
 					"formdata": [
 						{
 							"key": "username",
-							"value": "Amirreza",
+							"value": "Atra",
 							"type": "text"
 						}
 					]
@@ -251,6 +263,217 @@
 					"path": [
 						"admin",
 						"ban-user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8. Send Message to a Friend",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MjU5Nzk2LCJpYXQiOjE3NTkyNTk0OTYsImp0aSI6IjUxZmFiZWEyZjY3MTQyNjNhMzg5NTYzZTliZjUyMGJiIiwidXNlcl9pZCI6IjIifQ.chRg5adDApHYb5zGc-PSS0-abFS2ss7nUYjUJY2qfnM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/friends/send-message/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"friends",
+						"send-message",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9. Admin: List All Messages",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MzI4MDM1LCJpYXQiOjE3NTkzMjc3MzUsImp0aSI6ImIzM2YzOWFjZDg0YjQwYTRiZDI3ZjE1ZjE0MGM0ZmVlIiwidXNlcl9pZCI6IjEifQ.tEW1Dfx7pxcqk24rY-oAVIkRRWlZ300iaTajmiAQCAY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/admin/messages/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"admin",
+						"messages",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10. Admin: Delete Message",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MjYwMDU1LCJpYXQiOjE3NTkyNTk3NTUsImp0aSI6Ijg1ZDdiZWFhYjI5NzQ3OGZhOWI0N2QxMjkxMmQ0YmIzIiwidXNlcl9pZCI6IjEifQ.YX5OJKIWOWdb0K3lPcdcWGF4ukKryKSsAzt4tUW97Ms",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/admin/messages/1/delete/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"admin",
+						"messages",
+						"1",
+						"delete",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11. Admin: Add Coins",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MzMwMjQwLCJpYXQiOjE3NTkzMjk5NDAsImp0aSI6IjYxYjMzY2NiNzQ3MTQwZDI5MzM5YjZiNGZkY2VkOTFkIiwidXNlcl9pZCI6IjEifQ.78Jdo97u4pSSZWoUlzhv0k6C36OBcGrNRviNKwnlauI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "200",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseURL}}/admin/add-coins/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"admin",
+						"add-coins",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "12. Admin: Ban User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MjYwMDU1LCJpYXQiOjE3NTkyNTk3NTUsImp0aSI6Ijg1ZDdiZWFhYjI5NzQ3OGZhOWI0N2QxMjkxMmQ0YmIzIiwidXNlcl9pZCI6IjEifQ.YX5OJKIWOWdb0K3lPcdcWGF4ukKryKSsAzt4tUW97Ms",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseURL}}/admin/ban-user/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"admin",
+						"ban-user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "13. Admin: Unban User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MzMwMjQwLCJpYXQiOjE3NTkzMjk5NDAsImp0aSI6IjYxYjMzY2NiNzQ3MTQwZDI5MzM5YjZiNGZkY2VkOTFkIiwidXNlcl9pZCI6IjEifQ.78Jdo97u4pSSZWoUlzhv0k6C36OBcGrNRviNKwnlauI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseURL}}/admin/unban-user/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"admin",
+						"unban-user",
 						""
 					]
 				}
